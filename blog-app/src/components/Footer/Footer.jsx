@@ -3,7 +3,7 @@ import React from "react";
 export default Footer;
 function Footer() {
 	return (
-		<section className="relative py-4 overflow-hidden bg-gray-100 rounded-xl lg:rounded-full shadow-xl">
+		<section className="relative py-4 overflow-hidden bg-gray-100 shadow-xl rounded-xl lg:rounded-full">
 			<div className="container relative z-10 px-4 mx-auto">
 				<div className="flex flex-wrap items-center justify-center lg:-m-8 lg:justify-between">
 					<div className="w-auto p-8">

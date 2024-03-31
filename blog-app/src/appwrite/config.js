@@ -8,8 +8,8 @@ export class Service {
 
 	constructor() {
 		this.client
-			.setEndpoint(conf.appwriteUrl)
-			.setProject(conf.appwriteProjectId);
+			.setEndpoint("https://cloud.appwrite.io/v1")
+			.setProject("66055275628ba1cbb0a0");
 		this.databases = new Databases(this.client);
 		this.bucket = new Storage(this.client);
 	}
@@ -28,8 +28,8 @@ export class Service {
 
 			// Call the createDocument function with the updated document object
 			return await this.databases.createDocument(
-				conf.appwriteDatabaseId,
-				conf.appwriteCollectionId,
+				"660553694b06153ba4c6",
+				"6605539b9ea7fe30917c",
 				slug,
 				document
 			);
@@ -42,8 +42,8 @@ export class Service {
 	async updatePost(slug, { title, content, featuredImage, status }) {
 		try {
 			return await this.databases.updateDocument(
-				conf.appwriteDatabaseId,
-				conf.appwriteCollectionId,
+				"660553694b06153ba4c6",
+				"6605539b9ea7fe30917c",
 				slug,
 				{
 					title,
@@ -60,8 +60,8 @@ export class Service {
 	async deletePost(slug) {
 		try {
 			await this.databases.deleteDocument(
-				conf.appwriteDatabaseId,
-				conf.appwriteCollectionId,
+				"660553694b06153ba4c6",
+				"6605539b9ea7fe30917c",
 				slug
 			);
 			return true;
@@ -74,8 +74,8 @@ export class Service {
 	async getPost(slug) {
 		try {
 			return await this.databases.getDocument(
-				conf.appwriteDatabaseId,
-				conf.appwriteCollectionId,
+				"660553694b06153ba4c6",
+				"6605539b9ea7fe30917c",
 				slug
 			);
 		} catch (error) {
@@ -87,8 +87,8 @@ export class Service {
 	async getPosts(queries = [Query.equal("status", "active")]) {
 		try {
 			return await this.databases.listDocuments(
-				conf.appwriteDatabaseId,
-				conf.appwriteCollectionId,
+				"660553694b06153ba4c6",
+				"6605539b9ea7fe30917c",
 				queries
 			);
 		} catch (error) {
@@ -102,7 +102,7 @@ export class Service {
 	async uploadFile(file) {
 		try {
 			return await this.bucket.createFile(
-				conf.appwriteBucketId,
+				"65ce52c3a4a10040abc0",
 				ID.unique(),
 				file
 			);
