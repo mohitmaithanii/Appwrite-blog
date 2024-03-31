@@ -102,7 +102,7 @@ export class Service {
 	async uploadFile(file) {
 		try {
 			return await this.bucket.createFile(
-				"65ce52c3a4a10040abc0",
+				"66055275628ba1cbb0a0",
 				ID.unique(),
 				file
 			);
@@ -114,7 +114,7 @@ export class Service {
 
 	async deleteFile(fileId) {
 		try {
-			await this.bucket.deleteFile(conf.appwriteBucketId, fileId);
+			await this.bucket.deleteFile("660554f8bc548483b10a", fileId);
 			return true;
 		} catch (error) {
 			console.log("Appwrite serive :: deleteFile :: error", error);
@@ -123,7 +123,7 @@ export class Service {
 	}
 
 	getFilePreview(fileId) {
-		return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+		return this.bucket.getFilePreview("6608fcb89ac2ce744e7d", fileId);
 	}
 }
 
